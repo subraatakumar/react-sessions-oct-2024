@@ -166,7 +166,7 @@
                 <span
                   style={{
                     paddingLeft: 10,
-                    color: isLoggedIn ? "green" : "red",
+                    color: isLoggedIn ? "#66ff66" : "red",
                   }}
                 >
                   {isLoggedIn ? "Avilable" : "NotAvailable"}
