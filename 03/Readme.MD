@@ -55,3 +55,64 @@
 
 - What is the issue in above code ?
 
+A: The issue is our DOM is not updating the counter value.
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js"></script>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone@7.8.3/babel.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const App = () => {
+        return (
+          <>
+            <CounterComp />
+          </>
+        );
+      };
+
+      const CounterComp = () => {
+        const [counter, setCounter] = React.useState(1);
+
+        const incCounter = () => {
+          setCounter(counter + 1);
+          console.log(counter);
+        };
+
+        const decCounter = () => {
+          setCounter(counter - 1);
+          console.log(counter);
+        };
+        return (
+          <div>
+            <p>Counter : {counter}</p>
+            <button onClick={incCounter}>Increase Counter</button>
+            <button onClick={decCounter}>Decrease Counter</button>
+          </div>
+        );
+      };
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(<App />);
+    </script>
+  </body>
+</html>
+```
+
+- The revised program solved the issue because when ever state updates, react will re-render the component.
+
