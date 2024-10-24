@@ -1,1 +1,2 @@
 - [Custom Middleware in Redux](https://github.com/subraatakumar/2710_2/tree/middleware)
+- [Thunk middleware Example](https://github.com/subraatakumar/2710_2/tree/thunk)
