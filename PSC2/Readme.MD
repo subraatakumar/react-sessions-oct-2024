@@ -1,0 +1,2 @@
+- [Initial Setup](https://github.com/subraatakumar/subrata-ecom-app)
+- [Redux Setup]()
